@@ -20,10 +20,6 @@ def get_item(item_id):
         return jsonify({'message': 'Item not found'}), 404
 
 
-
-
-
-
 # Endpoint to add a new item
 @app.route('/items', methods=['POST'])
 def add_item():
@@ -31,3 +27,6 @@ def add_item():
     data.append(new_item)
     return jsonify({'message': 'Item added successfully', 'item': new_item}), 201
 
+# Run the application
+if __name__ == '__main__':
+    app.run(debug=True)
